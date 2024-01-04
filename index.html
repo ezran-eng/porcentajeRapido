@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Porcentajes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        #calculator {
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div id="calculator">
+    <h2>Calculadora de Porcentajes</h2>
+    <label for="number">Número:</label>
+    <input type="number" id="number" placeholder="Ingresa el número">
+
+    <label for="percentage">Porcentaje:</label>
+    <input type="number" id="percentage" placeholder="Ingresa el porcentaje">
+
+    <button onclick="calculatePercentage()">Calcular</button>
+
+    <div id="result"></div>
+</div>
+
+<script>
+    function calculatePercentage() {
+        var number = parseFloat(document.getElementById("number").value);
+        var percentage = parseFloat(document.getElementById("percentage").value);
+
+        if (!isNaN(number) && !isNaN(percentage)) {
+            var result = (percentage / 100) * number;
+            document.getElementById("result").innerHTML = "El " + percentage + "% de " + number + " es: " + result;
+        } else {
+            document.getElementById("result").innerHTML = "Por favor, ingresa números válidos.";
+        }
+    }
+</script>
+</body>
+</html>
